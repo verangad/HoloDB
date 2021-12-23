@@ -1,0 +1,10 @@
+.query-tab {
+color: white;
+font-size: 19px;
+}
+
+.channel {
+
+    display: flex;
+    justify-content: flex-start;
+}

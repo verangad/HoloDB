@@ -1,0 +1,35 @@
+{
+  "name": "holodb",
+  "version": "1.0.0",
+  "description": "COMP 3380 Final Project",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "1.0.0",
+    "mac": {
+      "category": ""
+    }
+  },
+  "repository": "https://github.com/verangad/HoloDB",
+  "keywords": [
+
+  ],
+  "author": "Dillan Veranga",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^16.0.1",
+    "electron-builder": "^22.14.5"
+
+  },
+  "dependencies": {
+    "ag-grid-community": "^26.2.0",
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2"
+  }
+}

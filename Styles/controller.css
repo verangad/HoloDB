@@ -1,0 +1,61 @@
+.data-controller{
+    background: #222326;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+
+.list-controller li{
+    background-color: transparent;
+    list-style: none;
+    display: inline-block;
+    color: white;
+
+
+}
+.controller-nav{
+
+    margin-top: -28px;
+    height: 100%;
+
+}
+
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.loaded-text{
+
+    margin-top: 4px;
+    padding: 0 0;
+    width: 50%;
+    height: 100%;
+    white-space: nowrap;
+    color: white;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

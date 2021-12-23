@@ -1,0 +1,94 @@
+header{
+
+    position: sticky;
+    color: white;
+    background-color: #1e2124;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    height: 70px;
+    z-index: 5;
+    width: 100%;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+}
+
+
+
+.drop-content{
+    background-color: #1e2124;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+.drop-content:hover {
+
+    color: yellow;
+}
+
+
+.top-nav{
+
+    margin-top: -16px;
+
+}
+
+
+.nav-container{
+
+    max-height: 100%;
+    width: 100%;
+
+}
+
+
+
+.head-container{
+
+    z-index: 40;
+    line-height: 70px;
+}
+
+.nav-buttons{
+
+    background-color: transparent;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+
+
+}
+
+.nav-buttons li {
+    background-color: transparent;
+    list-style: none;
+    display: inline-block;
+
+
+}
+
+.nav-buttons li a{
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: white;
+
+
+}
+
+.nav-buttons li a:hover{
+    color: yellow;
+
+}
+.nav-buttons li a:hover .mag-glass{
+    display: block;
+}
+

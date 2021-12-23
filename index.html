@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+
+    <link href="Styles/styles.css" rel="stylesheet">
+    <link href="Styles/headStyles.css" rel="stylesheet">
+    <link href="Styles/querySheet.css" rel="stylesheet">
+      <link href="Styles/infoStyles.css" rel="stylesheet">
+      <link href="Styles/tableSheet.css" rel="stylesheet">
+      <link href="Styles/controller.css" rel="stylesheet">
+      <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+      <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+      <link rel="stylesheet" href="https://unpkg.com/@ag-grid-community/all-modules@26.2.0/dist/styles/ag-theme-alpine-dark.css">
+
+  </head>
+  <body>
+
+  <div class="head-container">
+
+
+    <header id="head">
+
+      <div class="logo">
+
+
+        <h1 class="name-text"><a  style="color: white">HoloDB</a></h1>
+
+      </div>
+
+      <div class="nav-container">
+        <nav class="top-nav"> <!-- nav bar -->
+          <ul class="nav-buttons">
+
+            <li><button onclick="toggleInfo()" class="drop-content">Show Info</button></li>
+              <li><button onclick="downloadCSV()" class="drop-content">Export</button></li>
+
+
+          </ul>
+
+        </nav>
+      </div>
+
+
+
+
+
+    </header>
+  </div>
+  <div class="query-selector">
+
+
+
+
+  <div class="listbox-area">
+    <div class="left-area">
+    <span class="query-title">
+      Tables
+    </span>
+      <ul id="tablelist"
+          tabindex="0"
+          role="listbox">
+        <li class="list-select" id="Channels-select" role="option" onclick="changeData('channels', 'Channels-select', 1)">
+          Channels
+        </li>
+        <li class="list-select" id="Vtubers-select" role="option" onclick="changeData('vtubers', 'Vtubers-select', 1)">
+          Vtubers
+        </li>
+        <li class="list-select" id="Affiliations-select" role="option" onclick="changeData('affiliations', 'Affiliations-select', 1)">
+          Affiliations
+        </li>
+        <li class="list-select" id="Subgroups-select" role="option" onclick="changeData('subgroups', 'Subgroups-select', 1)">
+          Subgroups
+        </li>
+        <li class="list-select" id="Videos-select" role="option" onclick="changeData('videos', 'Videos-select', 1)">
+          Videos
+        </li>
+        <li class="list-select" id="Chats-select" role="option" onclick="changeData('chats', 'Chats-select', 1)">
+          Chats
+        </li>
+        <li class="list-select" id="Superchats-select" role="option" onclick="changeData('superchats', 'Superchats-select', 1)">
+          Superchats
+        </li>
+        <li class="list-select" id="SuperchatStats-select" role="option" onclick="changeData('superchatstats', 'SuperchatStats-select', 1)">
+          SuperchatStats
+        </li>
+        <li class="list-select" id="ChatsStats-select" role="option" onclick="changeData('chatstats', 'ChatsStats-select', 1)">
+          ChatsStats
+        </li>
+        <li class="list-select" id="Chatters-select" role="option" onclick="changeData('chatters', 'Chatters-select', 1)">
+          Chatters
+        </li>
+        <li class="list-select" id="BannedIn-select" role="option" onclick="changeData('bannedin', 'BannedIn-select', 1)">
+          BannedIn
+        </li>
+        <li class="list-select" id="VideoChannel-select" role="option" onclick="changeData('videochannel', 'VideoChannel-select', 1)">
+            VideoChannel
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="listbox-area">
+    <div class="left-area">
+    <span class="query-title">
+      Queries
+    </span>
+      <ul id="querylist" tabindex="0" role="listbox">
+          <li class="list-select" id="query-one-select" role="option" onclick="changeData('queryone', 'query-one-select', 1)">
+              Query One
+          </li>
+          <li class="list-select" id="query-two-select" role="option" onclick="changeData('querytwo', 'query-two-select', 1)">
+              Query Two
+          </li>
+          <li class="list-select" id="query-three-select" role="option" onclick="changeData('querythree', 'query-three-select', 1)">
+              Query Three
+          </li>
+          <li class="list-select" id="query-four-select" role="option" onclick="changeData('queryfour', 'query-four-select', 1)">
+              Query Four
+          </li>
+          <li class="list-select" id="query-five-select" role="option" onclick="changeData('queryfive', 'query-five-select', 1)">
+              Query Five
+          </li>
+          <li class="list-select" id="query-six-select" role="option" onclick="changeData('querysix', 'query-six-select', 1)">
+              Query Six
+          </li>
+          <li class="list-select" id="query-seven-select" role="option" onclick="changeData('queryseven', 'query-seven-select', 1)">
+              Query Seven
+          </li>
+          <li class="list-select" id="query-eight-select" role="option" onclick="changeData('queryeight', 'query-eight-select', 1)">
+              Query Eight
+          </li>
+          <li class="list-select" id="query-nine-select" role="option" onclick="changeData('querynine', 'query-nine-select', 1)">
+              Query Nine
+          </li>
+          <li class="list-select" id="query-ten-select" role="option" onclick="changeData('queryten', 'query-ten-select', 1)">
+              Query Ten
+          </li>
+
+
+      </ul>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="main-container">
+      <div id="extra-info" style="height: 0; width: 100%; display: none">
+          <div class="query-tab" style="height:100%; width:100%; overflow-y:scroll; overflow-x:scroll; background: #222326">
+              <p id="query-info" style="padding-left:20px;">
+              </p>
+
+          </div>
+      </div>
+
+<!--
+      <div id="channel-info" style="height: 0; width: 100%; display: none">
+          <div class="channel" style="height:100%; width:100%; overflow: hidden; background: #222326">
+           <div class="channel-img" style="height: 100%; width: auto; background: #366ed4">
+               <img id="ch-im" src="" alt="" style="height: 100%; width: 100%;">
+           </div>
+              <div class="banner-img" style="height: 100%; width: 180px; background: darkgoldenrod">
+              <img id="ba-im" src="" alt="" style="height: 100%; width: 100%;">
+              </div>
+          </div>
+      </div>
+-->
+    <div class="data-controller" style="height: 30px; width: 100%;">
+        <p id="checkpage" class="loaded-text">Currently loaded: 1 to 953 of 953</p>
+        <div class="click-controller" style="height: 30px; width: 30%;">
+            <nav class="controller-nav">
+                <ul class="list-controller">
+
+                    <li onclick="changePage('ll')"><i class="arrow left"></i><i class="arrow left"></i></li>
+                    <li onclick="changePage('l')"><i class="arrow left"></i></li>
+                    <li> <p id="page-num" class="page-text">Page 1 of 1</p> </li>
+                    <li onclick="changePage('r')"><i class="arrow right"></i></li>
+                    <li onclick="changePage('rr')"><i class="arrow right"></i><i class="arrow right"></i></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+
+    </div>
+
+      <div id="myGrid" class="ag-theme-alpine-dark" style="height: calc(100% - 30px); width:100%;"></div>
+
+  </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="./photoRenderer.js"></script>
+
+    <script src="./functions.js"></script>
+
+
+    <script src="./table.js"></script>
+
+
+
+  </body>
+</html>

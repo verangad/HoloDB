@@ -1,0 +1,7 @@
+.main-container{
+    position: absolute;
+    left: 15%;
+    top: 70px;
+    width: 85%;
+    height: calc(100% - 70px);
+}
