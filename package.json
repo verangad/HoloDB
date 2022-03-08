@@ -22,7 +22,7 @@
   "author": "Dillan Veranga",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^16.0.1",
+    "electron": "^17.1.1",
     "electron-builder": "^22.14.5"
 
   },
