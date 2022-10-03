@@ -30,6 +30,6 @@
     "ag-grid-community": "^26.2.0",
     "axios": "^0.24.0",
     "express": "^4.17.1",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.1.2"
   }
 }
